@@ -35,6 +35,8 @@ class MoneyOutPutter
 
     public static function useISONum(int $isoNum, string $amount, bool $asFigure = false): ?string
     {
+        $amount = str_replace(',', '', $amount);
+
         self::loadCurrencies();
         $currency = array_filter(self::$currencies, fn($data) => $data['ISOnum'] === $isoNum);
         if (empty($currency)) {
