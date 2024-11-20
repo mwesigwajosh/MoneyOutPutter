@@ -21,10 +21,7 @@ Below are examples of how you can use MoneyOutPutter to format currency amounts.
 
 Example 1: Format as Words
 
-<?php
-
 require 'vendor/autoload.php';
-
 use mwesigwajoshua\MoneyOutPutter;
 
 $amount = "1,000,000"; // Amount should be passed as a string
@@ -33,11 +30,9 @@ $currencyCode = 'UGX'; // ISO currency code for Ugandan Shillings
 // Get formatted amount in words
 $formattedAmount = MoneyOutPutter::useCode($currencyCode, $amount);
 echo $formattedAmount; // Output: One million Ugandan Shillings
-?>
+
 
 Example 2: Format as Figures (with Currency Symbol)
-
-<?php
 
 require 'vendor/autoload.php';
 
@@ -50,4 +45,4 @@ $currencyCode = 'UGX'; // ISO currency code for Ugandan Shillings
 //Note: A 3rd arguement is passed as true
 $formattedAmount = MoneyOutPutter::useCode($currencyCode, $amount, true);
 echo $formattedAmount; // Output: USh 1,000,000
-?>
+
