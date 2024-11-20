@@ -18,7 +18,7 @@ $composer require mwesigwajoshua/moneyoutputter
 
 Usage Example 💡
 Below are examples of how you can use MoneyOutPutter to format currency amounts.
-
+-------------------------------------------------------------------------------------------------------------------------
 Example 1: Format as Words
 
 require 'vendor/autoload.php';
@@ -32,6 +32,7 @@ $formattedAmount = MoneyOutPutter::useCode($currencyCode, $amount);
 echo $formattedAmount; // Output: One million Ugandan Shillings
 
 
+----------------------------------------------------------------------------------------------------------------------------
 Example 2: Format as Figures (with Currency Symbol)
 
 require 'vendor/autoload.php';
