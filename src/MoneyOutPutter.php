@@ -63,10 +63,12 @@ class MoneyOutPutter
             $major = $whole === '1' ? $currency['majorSingle'] : $currency['majorPlural'];
             $minor = $decimalPart === '1' ? $currency['minorSingle'] : $currency['minorPlural'];
 
-            $result = ucfirst($wholeInWords) . ' ' . $currency['demonym'] . ' ' . $major;
+            $result = $wholeInWords . ' ' . $currency['demonym'] . ' ' . $major;
             if (bccomp($decimalPart, '0', $currency['decimals']) > 0) {
                 $result .= ' and ' . ucfirst($decimalPartInWords) . ' ' . $minor;
             }
+
+            $result = ucwords($result);
         }
 
         return $result;
@@ -145,7 +147,7 @@ class MoneyOutPutter
                 $units = bcmod($number, '10');
                 $result .= $words[(int)$tens];
                 if (bccomp($units, '0') > 0) {
-                    $result .= '-' . $words[(int)$units];
+                    $result .= ' ' . $words[(int)$units];
                 }
             }
         }
