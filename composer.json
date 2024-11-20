@@ -1,0 +1,22 @@
+{
+    "name": "mwesigwajoshua/money-out-putter",
+    "description": "MoneyOutputter is a versatile and easy-to-use PHP package designed for formatting and converting monetary amounts into both human-readable words and numeric representations. Ideal for applications that require displaying currency values in a clear and user-friendly manner, this package supports multiple currencies, ensuring that the output is accurate and formatted according to the rules of each currency's locale.",
+    "type": "library",
+    "require-dev": {
+        "phpunit/phpunit": "^11.4"
+    },
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "mwesigwajoshua\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Mwesigwa Joshua",
+            "email": "joshuamj59@gmail.com"
+        }
+    ],
+    "minimum-stability": "stable",
+    "require": {}
+}
