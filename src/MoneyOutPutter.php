@@ -54,7 +54,7 @@ class MoneyOutPutter
             // Format as figure
             $result = $currency['symbol'] . ' ' . number_format($whole);
             if (bccomp($decimalPart, '0', $currency['decimals']) !== 0) {
-                $result .= '.' . ltrim($decimalPart, '0'); // Add decimal part
+                $result .= ltrim($decimalPart, '0'); // Add decimal part
             }
         } else {
             // Format as words

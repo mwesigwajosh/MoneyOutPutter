@@ -50,3 +50,20 @@ $currencyCode = 'UGX'; // ISO currency code for Ugandan Shillings
 $formattedAmount = MoneyOutPutter::useCode($currencyCode, $amount, true);
 echo $formattedAmount; // Output: **USh 1,000,000**
 ```
+
+### Example 3 (Using ISO num)
+
+```php
+require 'vendor/autoload.php';
+
+use  mwesigwajoshua\MoneyOutPutter;
+
+$amount =  "5225.50"; //Please note: amount should be passed as a string
+$Isonum = '800'; // 800 is Ugandan Shilling ISOnum
+
+$formattedAmount = MoneyOutPutter::useISONum($Isonum, $amount);
+echo $formattedAmount; //output: **Five Thousand Two Hundred Twenty Five Ugandan Shillings And Fifty Five Cents**
+
+$formattedAmount = MoneyOutPutter::useISONum($Isonum, $amount, true);
+echo $formattedAmount; //output: **USh 5,225.50**
+```
