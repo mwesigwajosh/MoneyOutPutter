@@ -24,7 +24,6 @@ class MoneyOutPutter
     public static function useCode(string $code, string $amount, bool $asFigure = false): ?string
     {
         $amount = str_replace(',', '', $amount);
-
         self::loadCurrencies();
         if (!isset(self::$currencies[$code])) {
             throw new InvalidCurrencyCodeException("Invalid currency code: $code");
@@ -47,6 +46,7 @@ class MoneyOutPutter
 
     private static function formatCurrency(array $currency, string $amount, bool $asFigure = false): string
     {
+        $amount = ltrim($amount, '-'); // Remove the negative sign to use the absolute value
         $whole = bcdiv($amount, '1', 0); // Extract whole number part
         $decimalPart = bcsub($amount, $whole, $currency['decimals']); // Get decimal part
 
